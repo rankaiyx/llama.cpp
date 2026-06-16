@@ -210,8 +210,7 @@ struct server_task {
         }
     }
 
-  static task_params params_from_json_cmpl(
-        const llama_tokens & tokens,
+static task_params params_from_json_cmpl(
         const llama_vocab * vocab,
         const common_params & params_base,
         const int n_ctx_slot,
