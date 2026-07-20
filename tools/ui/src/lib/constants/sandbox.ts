@@ -20,7 +20,20 @@ export const SANDBOX_TOOL_DEFINITION: OpenAIToolDefinition = {
 		description:
 			'Execute JavaScript in a sandboxed browser worker (no DOM, no page access). ' +
 			'Top level await is supported. Use console.log to print intermediate values; ' +
-			'a top level return statement is captured as the result.',
+			'a top level return statement is captured as the result.\n' +
+			'\n' +
+			'Symbolic computation is available via the `math` object (math.js 13.0.0):\n' +
+			'- `math.evaluate(expr, scope)` — evaluate numeric/symbolic expressions\n' +
+			'- `math.parse(expr)` — parse expression into an expression node\n' +
+			'- `math.simplify(expr)` — simplify symbolic expressions\n' +
+			'- `math.derivative(expr, variable)` — compute symbolic derivatives\n' +
+			'- `math.integrate(expr, variable)` — compute symbolic integrals\n' +
+			'- `math.multiply(a, b)` / `math.divide(a, b)` — symbolic arithmetic on expressions\n' +
+			'- `math.unit(str)` — work with physical units\n' +
+			'- `math.matrix(type, data)` — matrix operations\n' +
+			'- `math.sqrt`, `math.pow`, `math.sin`, `math.cos`, etc. — math functions\n' +
+			'Example: `math.simplify(math.parse(\'(x+1)^2 - x^2\'))` returns `2*x + 1`.\n' +
+			'Example: `math.derivative(\'x^3 + x^2\', \'x\')` returns `3*x^2 + 2*x`.',
 		parameters: {
 			type: JsonSchemaType.OBJECT,
 			properties: {

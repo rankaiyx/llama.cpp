@@ -21,7 +21,10 @@ self.onmessage = async (event) => {
 	const reply = { logs, result: null, error: null };
 	try {
 		const AsyncFunction = Object.getPrototypeOf(async function () {}).constructor;
-		const value = await new AsyncFunction(event.data.code)();
+		// Inject `math` (from preloaded math.js) into the execution context.
+		// User code can use: math.evaluate(), math.parse(), math.simplify(),
+		// math.derivative(), math.integrate(), math.symbolic(), etc.
+		const value = await new AsyncFunction('math', event.data.code)(self.math);
 		if (value !== undefined) reply.result = fmt(value);
 	} catch (err) {
 		reply.error = err instanceof Error ? err.stack || err.message : String(err);
