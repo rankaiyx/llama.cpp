@@ -14,14 +14,15 @@ export const SANDBOX_EMPTY_OUTPUT = '(no output)';
 export const SANDBOX_TRUNCATION_NOTICE = '[output truncated]';
 
 const NERDAMER_DESCRIPTION = `
-Symbolic/numeric math via \`nerdamer\` (Identifier 'nerdamer' has already been declared, use it directly).
+Symbolic/numeric math via \`nerdamer\`
 nerdamer(expr,subs?,opts?)/nerdamer.func(...)→Expression Format via .text(fmt?) (fmt: 'decimals'|'fractions'|'scientific') eval via .evaluate(subs?)
 nerdamer(expr,{x:2}) substitutes numeric via opts 'numer' or .evaluate()
 simplify/expand/factor(expr) div/gcd/lcm(...) coeffs/partfrac(expr,var)
 diff/integrate(expr,var) defint(expr,lo,hi,var?) sum/product(expr,var,lo,hi) limit(expr,var,pt)
 solve(expr,var) solveEquations([eq1,eq2],[var1,var2])
 polarform/rectform/arg/realpart/imagpart(z)
-set/get Var/Constant(name,val?) setFunction(name,[params],body)`;
+set/get Var/Constant(name,val?) setFunction(name,[params],body)
+IMPORTANT:Identifier 'nerdamer' has already been declared, use it directly`;
 
 /**
  * Build the sandbox tool definition. When `includeSymbolicMath` is true,
