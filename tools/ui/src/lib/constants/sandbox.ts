@@ -20,7 +20,7 @@ nerdamer(expr,{x:2}) substitutes numeric via opts 'numer' or .evaluate()
 simplify/expand/factor(expr) div/gcd/lcm(...) coeffs/partfrac(expr,var)
 diff/integrate(expr,var) defint(expr,lo,hi,var?) sum/product(expr,var,lo,hi) limit(expr,var,pt)
 solve(expr,var) solveEquations([eq1,eq2],[var1,var2])
-vector(arr) matrix(row1,row2),not matrix([row1, row2]) dot/cross(v1,v2) determinant/invert/transpose(m)
+vector(arr) matrix(row1,row2),not matrix([row1,row2]) dot/cross(v1,v2) determinant/invert/transpose(m)
 polarform/rectform/arg/realpart/imagpart(z)
 set/get Var/Constant(name,val?) setFunction(name,[params],body)`;
 
